@@ -32,6 +32,7 @@ public class EmpJacksonDeserializer extends StdDeserializer<Employee> {
        if (!jsonNode.has("consultancy")) {
             e = new Employee();
             e.setEmpId((Integer) jsonNode.get("empId").numberValue());
+            e.setEmpName(jsonNode.get("empName").textValue());
            return e;
         } else
         {
